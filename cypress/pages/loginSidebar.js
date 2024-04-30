@@ -1,4 +1,4 @@
-import { faker } from "@faker-js/faker"
+import { faker } from "@faker-js/faker";
 
 class LoginSidebar {
     elements = {
@@ -6,7 +6,7 @@ class LoginSidebar {
         passwordField: () => cy.get('#dwfrm_login_password_default'),
         loginBtn: () => cy.get('#dwfrm_login > .btn'),
         emailField: () => cy.get('#dwfrm_preregister_username_default', { timeout: 10000 }),
-        registerBtn: () => cy.get('.form-row-button > .btn'),
+        registerBtn: () => cy.get('.form-row-button > .btn')
     }
 
     login(username, password) {
@@ -16,7 +16,7 @@ class LoginSidebar {
     }
 
     newUser() {
-        let username = faker.internet.email()
+        let username = faker.internet.email();
         this.elements.emailField().type(username);
         this.elements.registerBtn().click();
         return username;
